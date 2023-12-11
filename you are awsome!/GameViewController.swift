@@ -10,9 +10,12 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    @IBOutlet weak var messageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("👍 View did has run!")
+        messageLabel.text = "Fabulous That's You!"
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -41,5 +44,9 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    @IBAction func messageButtonPressed(_ sender: UIButton) {
+        print("😎 The message button was pressed!")
+        messageLabel.text = "Your Are Awesome!"
     }
 }
